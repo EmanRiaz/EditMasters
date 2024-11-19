@@ -1,0 +1,544 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Urbanist, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+}
+
+:root {
+  --bg-color: #f4f3ff;
+  --btn-color: #646cff;
+  --dark-color: #242424;
+  --helper-color: #99b9ff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/*? base style */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 5.4rem;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+p,
+li,
+label,
+input,
+textarea {
+  font-size: 1.8rem;
+  line-height: 1.56;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.06rem;
+}
+
+a {
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: var(--btn-color);
+  text-decoration: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+/* Dashboard.css */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+}
+
+.dashboard-heading {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.card-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 30px;
+  padding: 20px;
+  width: 380px;
+  text-align: center;
+  transition: transform 0.8s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-subheading {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.dashboard-nav ul {
+  list-style: none;
+  padding: 0;
+  justify-content:center;
+  display:flex;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 2.0rem;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.card-link:hover {
+  color: #0056b3;
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 3.0rem;
+}
+
+@media (max-width: 768px) {
+  .card-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+
+/*? layout Rule  */
+
+.container {
+  max-width: 140rem;
+  padding: 4rem 2.4rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 6.4rem;
+}
+
+.grid-two-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-four-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* PdfPages.css */
+
+.pdf-page-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-page-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.pdf-page-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pdf-page-container label {
+  font-weight: bold;
+  color: #555;
+}
+
+.pdf-page-container input[type="file"],
+.pdf-page-container input[type="number"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.pdf-page-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-page-container button:hover {
+  background-color: #0056b3;
+}
+
+.pdf-page-container .error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pdf-page-container .selected-files {
+  margin-top: 20px;
+}
+
+.pdf-page-container .selected-files ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pdf-page-container .selected-files li {
+  background-color: #e9e9e9;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+/*? Module Rules / Reusable */
+button {
+  text-transform: capitalize;
+  padding: 1rem 2.2rem;
+  font-size: 1.7rem;
+  font-weight: 500;
+  background-color: var(--btn-color);
+  border-radius: 0.8rem;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  transition: border-color 0.3s;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0.2rem var(--btn-color);
+  margin-left: 3.2rem;
+}
+
+
+/* Admin user Table Styles */
+.admin-users-section {
+  padding: 8px; /* Add some padding around the section */
+}
+
+.container {
+  max-width: 1200px; /* Set a max width for the container */
+  margin: 0 auto; /* Center the container */
+}
+
+h1 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 1px; /* Space below the heading */
+}
+
+table {
+  width: 100%; /* Full width table */
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 7px 29px 0px; /* Add slight shadow */
+  border-collapse: collapse; /* Merge borders */
+  border-radius: 1rem; /* Rounded corners */
+}
+
+th, td {
+  padding: 1rem; /* Adjusted padding for consistency */
+  text-align: center; /* Center text */
+  color: var(--dark-color); /* Use CSS variable for color */
+}
+
+thead th {
+  background-color: #f1f1f1; /* Light background for the header */
+  font-size: 1.5rem; /* Font size for headers */
+  letter-spacing: 0.1rem; /* Consistent letter spacing */
+}
+
+tbody tr {
+  /* display: grid; */ /* Remove this line */
+  /* Keep other styles to maintain appearance */
+  align-items: center;
+  box-shadow: 0 0.4rem 0 black; /* Shadow for rows */
+  margin-bottom: 10px; /* Space between rows */
+  border-bottom: 4px solid transparent; /* Space below rows */
+  color: var(--bg-color); /* Use CSS variable for color */
+}
+
+tbody tr:last-child {
+  box-shadow: none; /* Remove shadow for last row */
+}
+
+td {
+  font-size: 1.5rem; /* Font size adjustment */
+  letter-spacing: 0.1rem;
+  padding: 2rem; /* Padding for cells */
+  text-align: center; /* Center text */
+  color: var(--dark-color); /* Use CSS variable for color */
+}
+
+
+/*****************AdminToken**************/
+.admin-token-form {
+  max-width: 400px; /* Set maximum width for the form */
+  margin: 0 auto; /* Center the form horizontally */
+  background-color: #f9f9f9; /* Background color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.admin-token-form h1 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 1.5rem; /* Add bottom margin for spacing */
+}
+
+.admin-token-form label {
+  display: block; /* Display labels as block elements */
+  margin-bottom: 0.5rem; /* Space between label and input */
+  font-weight: bold; /* Make labels bold */
+}
+
+.admin-token-form input {
+  width: 100%; /* Full width input fields */
+  padding: 10px; /* Add padding for comfort */
+  margin-bottom: 10px; /* Space between inputs */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light gray border */
+  box-sizing: border-box; /* Include padding and border in total width/height */
+}
+
+.admin-token-form button {
+  width: 100%; /* Full width button */
+  padding: 10px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners for the button */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.admin-token-form button:disabled {
+  background-color: #ccc; /* Gray background for disabled button */
+  cursor: not-allowed; /* Not allowed cursor */
+}
+
+
+
+/***** Hero Section *****/
+
+.section-hero {
+  & .grid {
+    align-items: center;
+  }
+
+  .hero-content {
+    & p {
+      margin: 2.4rem 0 4.8rem 0;
+      &:first-child {
+        margin: 0 0 1.2rem 0;
+      }
+    }
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    & img {
+      width: 70%;
+      height: auto;
+    }
+  }
+}
+
+/* contact image */
+.contact-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+/***** End Hero  *****/
+
+/* error page  */
+#error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#error-page .content {
+  max-width: 70rem;
+  text-align: center;
+}
+
+.content h2.header {
+  font-size: 18vw;
+  line-height: 1em;
+  animation: animate 10s ease-in-out infinite;
+  background: -webkit-repeating-linear-gradient(
+    -60deg,
+    #71b7e6,
+    var(--btn-color),
+    #b98acc,
+    #ee8176,
+    #b98acc,
+    var(--btn-color),
+    #9b59b6
+  );
+  background-size: 500%;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-background-clip: text; /* For Safari compatibility */
+  color: transparent; /* Hide text color for the gradient effect */
+}
+
+.content p {
+  font-size: 2rem;
+}
+
+.content .button {
+  margin-top: 20px;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+/* LoginForm.css */
+.login-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.login-form h2 {
+  text-align: center;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* RegistrationForm.css */
+.registration-form {
+  max-width: 400px; /* Set maximum width for the form */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.registration-form h1 {
+  text-align: center; /* Center align the heading */
+  margin-bottom: 1.5rem; /* Add bottom margin for spacing */
+}
+
+.registration-form label {
+  display: block; /* Display labels as block elements */
+  margin-bottom: 0.5rem; /* Space between label and input */
+  font-weight: bold; /* Make labels bold */
+}
+
+.registration-form input {
+  width: 100%; /* Full width input fields */
+  padding: 10px; /* Add padding for comfort */
+  margin-bottom: 10px; /* Space between inputs */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light gray border */
+  box-sizing: border-box; /* Include padding and border in total width/height */
+}
+
+
+/* ContactForm.css */
+.section-form {
+  max-width: 400px; /* Set maximum width for the form */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.section-form h2 {
+  text-align: center; /* Center align the heading */
+}
+
+.section-form label {
+  display: block; /* Display labels as block elements */
+  margin-bottom: 0.5rem; /* Space between label and input */
+  font-weight: bold; /* Make labels bold */
+}
+
+.section-form input,
+.section-form textarea {
+  width: 100%; /* Full width for input fields and textarea */
+  padding: 10px; /* Add padding for comfort */
+  margin-bottom: 10px; /* Space between inputs */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light gray border */
+  box-sizing: border-box; /* Include padding and border in total width/height */
+}
+
+.section-form textarea {
+  resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+.section-form button {
+  width: 100%; /* Full width button */
+  padding: 10px; /* Button padding */
+  background-color: #007bff; /* Blue background color */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Button font size */
+}
+
+.section-form button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
